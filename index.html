@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meine Schreib-App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffffff" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&family=Poppins&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Schreib etwas</h1>
+
+    <div class="settings">
+      <button onclick="format('bold')"><b>B</b></button>
+      <button onclick="format('italic')"><i>I</i></button>
+      <button onclick="format('underline')"><u>U</u></button>
+
+      <label>Schriftgröße:
+        <select id="fontSize">
+          <option value="14px">Klein</option>
+          <option value="18px" selected>Mittel</option>
+          <option value="24px">Groß</option>
+        </select>
+      </label>
+
+      <label>Schriftart:
+        <select id="fontFamily">
+          <option value="Arial" style="font-family: Arial;">Arial</option>
+          <option value="'Times New Roman'" style="font-family: 'Times New Roman';">Times New Roman</option>
+          <option value="Georgia" style="font-family: Georgia;">Georgia</option>
+          <option value="Verdana" style="font-family: Verdana;">Verdana</option>
+          <option value="Courier New" style="font-family: 'Courier New';">Courier New</option>
+          <option value="Tahoma" style="font-family: Tahoma;">Tahoma</option>
+          <option value="'Trebuchet MS'" style="font-family: 'Trebuchet MS';">Trebuchet</option>
+          <option value="'Roboto', sans-serif" style="font-family: 'Roboto', sans-serif;">Roboto</option>
+          <option value="'Lobster', cursive" style="font-family: 'Lobster', cursive;">Lobster</option>
+          <option value="'Poppins', sans-serif" style="font-family: 'Poppins', sans-serif;">Poppins</option>
+        </select>
+      </label>
+
+      <label>Textfarbe:
+        <input type="color" id="textColorPicker" />
+      </label>
+
+      <button onclick="undoText()">↩️ Rückgängig</button>
+      <button onclick="redoText()">↪️ Wiederholen</button>
+      <button onclick="toggleTheme()">🌗 Theme</button>
+      <button onclick="exportPDF()">📄 PDF</button>
+      <button onclick="downloadText()">⬇️ TXT</button>
+
+      <label for="importFile" class="custom-upload">
+        📂 Textdatei laden
+        <input type="file" id="importFile" accept=".txt" hidden />
+      </label>
+    </div>
+
+    <div id="editor" contenteditable="true" class="editor" spellcheck="true">
+      <p>Schreib hier deinen Text...</p>
+    </div>
+
+    <button onclick="saveText()">💾 Speichern</button>
+    <p class="status" id="status"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

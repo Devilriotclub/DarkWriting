@@ -1,0 +1,84 @@
+
+:root {
+  --bg: #f5f5f5;
+  --text: #333;
+  --btn: #4caf50;
+  --btn-hover: #45a049;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --btn: #3f51b5;
+  --btn-hover: #303f9f;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+}
+
+.editor {
+  width: 100%;
+  min-height: 300px;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: white;
+  overflow-y: auto;
+}
+.editor:focus {
+  outline: none;
+}
+
+button, select, input[type="color"] {
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  margin: 0.3rem 0.2rem;
+  background-color: var(--btn);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover, select:hover {
+  background-color: var(--btn-hover);
+}
+
+.settings {
+  margin-bottom: 1rem;
+}
+
+.status {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: green;
+}
+
+.custom-upload {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--btn);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.custom-upload:hover {
+  background-color: var(--btn-hover);
+}
